@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Dashboard - MicroLoan Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="dashboard-nav">
+            <div class="logo">MicroLoan Platform</div>
+            <div class="user-info">
+                <span id="userName">Loading...</span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="dashboard-content">
+            <div class="dashboard-header">
+                <h1>Investor Dashboard</h1>
+                <button onclick="showInvestmentModal()" class="primary-btn">New Investment</button>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Portfolio Overview</h3>
+                    <div id="portfolioOverview" class="card-content">
+                        <p>Loading portfolio overview...</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Active Investments</h3>
+                    <div id="activeInvestments" class="card-content">
+                        <p>Loading active investments...</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Investment History</h3>
+                    <div id="investmentHistory" class="card-content">
+                        <p>Loading investment history...</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Available Opportunities</h3>
+                    <div id="investmentOpportunities" class="card-content">
+                        <p>Loading opportunities...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Investment Modal -->
+    <div id="investmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>New Investment</h2>
+            <form id="investmentForm">
+                <div class="form-group">
+                    <label for="investmentAmount">Investment Amount</label>
+                    <input type="number" id="investmentAmount" required min="100" step="100">
+                </div>
+                <div class="form-group">
+                    <label for="investmentType">Investment Type</label>
+                    <select id="investmentType" required>
+                        <option value="">Select Type</option>
+                        <option value="equity">Equity</option>
+                        <option value="debt">Debt</option>
+                        <option value="crowdfunding">Crowdfunding</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="riskLevel">Risk Level</label>
+                    <select id="riskLevel" required>
+                        <option value="">Select Risk Level</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="investmentDescription">Description</label>
+                    <textarea id="investmentDescription" required rows="4"></textarea>
+                </div>
+                <button type="submit" class="primary-btn">Submit Investment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="investor-dashboard.js"></script>
+</body>
+</html> 

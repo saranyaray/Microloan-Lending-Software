@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MicroLoan Connect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .register-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+        }
+
+        .register-form {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .register-form h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .register-form button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .register-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .register-form p {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .register-form a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .register-form a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .success-message {
+            color: #2ecc71;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        .form-select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <form class="register-form" id="registerForm">
+            <h2>Create Account</h2>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Register As</label>
+                <select id="role" class="form-select" required>
+                    <option value="">Select your role</option>
+                    <option value="borrower">Borrower</option>
+                    <option value="investor">Investor</option>
+                    <option value="lender">Lender</option>
+                </select>
+            </div>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </form>
+    </div>
+
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const role = document.getElementById('role').value;
+
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match';
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5002/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, password, role })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Store user data and token
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    localStorage.setItem('token', data.token);
+                    
+                    // Show success message
+                    successMessage.textContent = 'Registration successful! Redirecting...';
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+
+                    // Redirect based on role
+                    setTimeout(() => {
+                        switch(role) {
+                            case 'investor':
+                                window.location.href = 'investor-dashboard.html';
+                                break;
+                            case 'lender':
+                                window.location.href = 'lender-dashboard.html';
+                                break;
+                            default:
+                                window.location.href = 'index.html';
+                        }
+                    }, 2000);
+                } else {
+                    // Show error message
+                    errorMessage.textContent = data.message;
+                    errorMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                errorMessage.textContent = 'An error occurred. Please try again.';
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html> 

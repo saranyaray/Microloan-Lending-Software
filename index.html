@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroLoan Connect - Empowering Small Businesses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>MicroLoan Connect</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#loan-types">Loan Types</a></li>
+                <li><a href="#calculator">Loan Calculator</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+                <li><a href="register.html" class="btn-apply">Apply Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Empowering Small Businesses with Quick Loans</h1>
+                <p>Fast, transparent, and hassle-free financial support for your business growth</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn-primary">Apply for Loan</a>
+                    <a href="#learn-more" class="btn-secondary">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">24hr</span>
+                        <span class="stat-label">Quick Approval</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5%</span>
+                        <span class="stat-label">Interest Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>1. Create Account</h3>
+                    <p>Sign up and complete your profile in minutes</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>2. Submit Application</h3>
+                    <p>Fill out our simple loan application form</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>3. Quick Approval</h3>
+                    <p>Get approved within 24 hours</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>4. Receive Funds</h3>
+                    <p>Get your loan disbursed quickly</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="loan-types" class="loan-types">
+            <h2>Our Loan Types</h2>
+            <div class="loan-cards">
+                <div class="loan-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Business Loan</h3>
+                    <p>Quick funding for your business needs</p>
+                    <ul class="loan-features">
+                        <li>₹50,000 - ₹5,00,000</li>
+                        <li>Up to 24 months</li>
+                        <li>Competitive rates</li>
+                    </ul>
+                    <a href="register.html" class="btn-apply">Apply Now</a>
+                </div>
+                <div class="loan-card">
+                    <i class="fas fa-tractor"></i>
+                    <h3>Agricultural Loan</h3>
+                    <p>Support for farmers and agricultural activities</p>
+                    <ul class="loan-features">
+                        <li>₹25,000 - ₹2,00,000</li>
+                        <li>Up to 18 months</li>
+                        <li>Special rates for farmers</li>
+                    </ul>
+                    <a href="register.html" class="btn-apply">Apply Now</a>
+                </div>
+                <div class="loan-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Equipment Loan</h3>
+                    <p>Finance for machinery and equipment</p>
+                    <ul class="loan-features">
+                        <li>₹1,00,000 - ₹10,00,000</li>
+                        <li>Up to 36 months</li>
+                        <li>Flexible terms</li>
+                    </ul>
+                    <a href="register.html" class="btn-apply">Apply Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="calculator">
+            <h2>Loan Calculator</h2>
+            <div class="calculator-container">
+                <h3>Loan Calculator</h3>
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="loan-amount">Loan Amount (₹)</label>
+                        <input type="range" id="loan-amount" min="50000" max="1000000" step="10000" value="250000">
+                        <span class="amount-display">₹2,50,000</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="interest-rate">Interest Rate (%)</label>
+                        <input type="range" id="interest-rate" min="5" max="15" step="0.1" value="8.5">
+                        <span class="rate-display">8.5%</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="loan-term">Loan Term (Years)</label>
+                        <input type="range" id="loan-term" min="1" max="5" step="1" value="2">
+                        <span class="term-display">2 years</span>
+                    </div>
+                </div>
+                <div class="calculator-result">
+                    <h4>Monthly Payment</h4>
+                    <div class="result-amount">₹11,250</div>
+                    <div class="result-details">
+                        <div class="detail-item">
+                            <span>Total Interest</span>
+                            <span>₹20,000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Total Payment</span>
+                            <span>₹2,70,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Quick Processing</h3>
+                    <p>Get approved within 24 hours</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-percentage"></i>
+                    <h3>Competitive Rates</h3>
+                    <p>Low interest rates for all loan types</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Process</h3>
+                    <p>100% secure and transparent</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer service</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get in Touch</h2>
+            <div class="contact-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Loan Type</option>
+                            <option value="business">Business Expansion</option>
+                            <option value="agricultural">Agricultural Loans</option>
+                            <option value="equipment">Equipment Financing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>SRM Institute of Science and Technology, Chennai</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 234 567 890</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@microloanconnect.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>MicroLoan Connect is dedicated to supporting small businesses and farmers with quick and transparent financial solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#loan-types">Loan Types</a></li>
+                    <li><a href="#calculator">Loan Calculator</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> SRM Institute of Science and Technology, Chennai</li>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@microloanconnect.com</li>
+                    <li><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MicroLoan Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
